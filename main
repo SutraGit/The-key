@@ -1,0 +1,106 @@
+<head>
+
+    <style>
+
+        #title {
+            text-align: center;
+            font-style: italic;
+            background-color: gray;
+            font-size: 50px;
+            border: 2px solid black;
+            margin: 5px; 
+            margin-bottom: 20px;
+        }
+
+        #intro_body {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 1in;
+            background-color: rgb(187, 187, 187);
+            border: 2px solid grey;
+        }
+
+        #t-shirt {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: darkgrey;
+        }
+
+        #merch-description {
+            text-align: center;
+        }
+
+        #price {
+            background:rgba(4, 158, 38, 0.651);
+            margin-left: 7in;
+            margin-right: 7in;
+            padding: 1px;
+            border: solid 1.5px black;
+        }
+
+        #buy {
+            margin: 10px;
+        }
+
+    </style>
+
+    <h1 id="title">Welcome.</h1>
+
+</head>
+
+<body>
+    <hr>
+
+    <p id="intro_body">Salutations! I don't know why you're here, but, wanna buy some merchandise? It's for the <strong>basement.</strong> 
+    <br>They sell for really good prices, and I promise, they won't scam you!</br></p>
+
+    <hr>
+    
+    <div id="merch">
+            <img src="https://i.pinimg.com/originals/16/fa/e5/16fae574fb167051c6db10589f86c675.jpg" width="300px"  id="t-shirt">
+            <div id="merch-description">
+                <h3>Dark Corridor Merch</h3>
+                <div id="price">
+                <p>$8.99</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=l-ETi70TbxI" target="_blank">
+                <button id="buy">Buy Merch</button>
+            </a>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        'use strict';
+
+        let buffer = "";
+        let lastKeyTime = Date.now();
+
+        document.addEventListener('keydown', event => {
+            const charList = 'abcdefghijklmnopqrstuvwxyz0123456789 ';
+            const key = event.key.toLowerCase();
+
+            // we are only interested in alphanumeric keys and spaces
+            if (charList.indexOf(key) === -1) return;
+
+            const currentTime = Date.now();
+
+            if (currentTime - lastKeyTime > 1000) {
+                buffer = "";
+            }
+
+            buffer = buffer.concat(key)
+            lastKeyTime = currentTime;
+
+            console.log(buffer);
+
+            if (buffer === "dark corridor") {
+                window.location.assign("file:///C:/Users/12134/Desktop/Coding_Stuff/the_key/404.html");
+            }
+        });
+    });
+
+</script>
